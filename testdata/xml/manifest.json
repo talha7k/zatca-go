@@ -1,0 +1,347 @@
+{
+  "_meta": {
+    "generator": "apps/api/scripts/zatca-golden-vectors.ts",
+    "purpose": "UNSIGNED UBL 2.1 fixtures pinning the Go xml package byte-for-byte: xml = TS builder output, canonical = TS-owned XML C14N (UBLExtensions/cac:Signature/QR stripped), invoice_hash = SHA-256 of canonical. The signed payload fixtures live in testdata/signing/ (Z9).",
+    "regenerate": "pnpm --filter api exec tsx scripts/zatca-golden-vectors.ts"
+  },
+  "fixtures": [
+    {
+      "id": "standard-b2b-vat15",
+      "document_kind": "invoice",
+      "invoice_data": {
+        "invoiceNumber": "GOV-STANDARD-B2B-VAT15",
+        "uuid": "vector-standard-b2b-vat15-0001-0002-0003",
+        "issueDate": "2026-10-01",
+        "issueTime": "14:30:00",
+        "invoiceTypeCode": "388",
+        "invoiceTypeCodeName": "0100000",
+        "profileId": "reporting:1.0",
+        "currencyCode": "SAR",
+        "invoiceCounter": 1,
+        "previousInvoiceHash": "NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==",
+        "supplier": {
+          "nameAr": "مطعم الوادي الهندي",
+          "nameEn": "Indian Valley Restaurant",
+          "vatNumber": "310122393500003",
+          "address": {
+            "street": "King Fahd Road",
+            "building": "1234",
+            "additionalNumber": "5678",
+            "district": "Al Olaya",
+            "city": "Riyadh",
+            "postalCode": "12211",
+            "countryCode": "SA"
+          }
+        },
+        "customer": {
+          "name": "Ac Corp Ltd",
+          "vatNumber": "310122393500113",
+          "address": {
+            "street": "Prince Turki Road",
+            "building": "1111",
+            "district": "Al Malqa",
+            "city": "Riyadh",
+            "postalCode": "13521",
+            "countryCode": "SA"
+          }
+        },
+        "lineExtensionAmount": "500.00",
+        "taxExclusiveAmount": "500.00",
+        "taxInclusiveAmount": "575.00",
+        "payableAmount": "575.00",
+        "taxAmount": "75.00",
+        "taxSubtotals": [
+          {
+            "taxableAmount": "500.00",
+            "taxAmount": "75.00",
+            "percent": 15,
+            "taxCategoryId": "S"
+          }
+        ],
+        "invoiceLines": [
+          {
+            "id": 1,
+            "quantity": "2",
+            "unitCode": "PCE",
+            "lineExtensionAmount": "500.00",
+            "taxAmount": "75.00",
+            "itemName": "Chicken Biryani Family Pack",
+            "taxCategoryId": "S",
+            "taxPercent": 15,
+            "priceAmount": "250.00"
+          }
+        ]
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\"\n         xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\"\n         xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\"\n         xmlns:ext=\"urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2\">\n  <ext:UBLExtensions>\n    <ext:UBLExtension>\n      <ext:ExtensionContent/>\n    </ext:UBLExtension>\n  </ext:UBLExtensions>\n  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>\n  <cbc:ProfileID>reporting:1.0</cbc:ProfileID>\n  <cbc:ID>GOV-STANDARD-B2B-VAT15</cbc:ID>\n  <cbc:UUID>vector-standard-b2b-vat15-0001-0002-0003</cbc:UUID>\n  <cbc:IssueDate>2026-10-01</cbc:IssueDate>\n  <cbc:IssueTime>14:30:00</cbc:IssueTime>\n  <cbc:InvoiceTypeCode name=\"0100000\">388</cbc:InvoiceTypeCode>\n  <cbc:DocumentCurrencyCode>SAR</cbc:DocumentCurrencyCode>\n  <cbc:TaxCurrencyCode>SAR</cbc:TaxCurrencyCode>\n\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>ICV</cbc:ID>\n    <cbc:UUID>1</cbc:UUID>\n  </cac:AdditionalDocumentReference>\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>PIH</cbc:ID>\n    <cac:Attachment>\n      <cbc:EmbeddedDocumentBinaryObject mimeCode=\"text/plain\">NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==</cbc:EmbeddedDocumentBinaryObject>\n    </cac:Attachment>\n  </cac:AdditionalDocumentReference>\n  <cac:Signature>\n    <cbc:ID>urn:oasis:names:specification:ubl:signature:Invoice</cbc:ID>\n    <cbc:SignatureMethod>urn:oasis:names:specification:ubl:dsig:enveloped:xades</cbc:SignatureMethod>\n  </cac:Signature>\n\n  <cac:AccountingSupplierParty>\n    <cac:Party>\n\n      <cac:PostalAddress>\n        <cbc:StreetName>King Fahd Road</cbc:StreetName>\n        <cbc:BuildingNumber>1234</cbc:BuildingNumber>\n        <cbc:PlotIdentification>5678</cbc:PlotIdentification>\n        <cbc:CitySubdivisionName>Al Olaya</cbc:CitySubdivisionName>\n        <cbc:CityName>Riyadh</cbc:CityName>\n        <cbc:PostalZone>12211</cbc:PostalZone>\n        <cac:Country>\n          <cbc:IdentificationCode>SA</cbc:IdentificationCode>\n        </cac:Country>\n      </cac:PostalAddress>\n      <cac:PartyTaxScheme>\n        <cbc:CompanyID>310122393500003</cbc:CompanyID>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:PartyTaxScheme>\n      <cac:PartyLegalEntity>\n        <cbc:RegistrationName>مطعم الوادي الهندي</cbc:RegistrationName>\n      </cac:PartyLegalEntity>\n    </cac:Party>\n  </cac:AccountingSupplierParty>\n  <cac:AccountingCustomerParty>\n    <cac:Party>\n\n      <cac:PostalAddress>\n        <cbc:StreetName>Prince Turki Road</cbc:StreetName>\n        <cbc:BuildingNumber>1111</cbc:BuildingNumber>\n        <cbc:CitySubdivisionName>Al Malqa</cbc:CitySubdivisionName>\n        <cbc:CityName>Riyadh</cbc:CityName>\n        <cbc:PostalZone>13521</cbc:PostalZone>\n        <cac:Country>\n          <cbc:IdentificationCode>SA</cbc:IdentificationCode>\n        </cac:Country>\n      </cac:PostalAddress>\n      <cac:PartyTaxScheme>\n        <cbc:CompanyID>310122393500113</cbc:CompanyID>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:PartyTaxScheme>\n      <cac:PartyLegalEntity>\n        <cbc:RegistrationName>Ac Corp Ltd</cbc:RegistrationName>\n      </cac:PartyLegalEntity>\n    </cac:Party>\n  </cac:AccountingCustomerParty>\n\n\n\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n    <cac:TaxSubtotal>\n      <cbc:TaxableAmount currencyID=\"SAR\">500.00</cbc:TaxableAmount>\n      <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n      <cac:TaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:TaxCategory>\n    </cac:TaxSubtotal>\n  </cac:TaxTotal>\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n  </cac:TaxTotal>\n\n  <cac:LegalMonetaryTotal>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">500.00</cbc:LineExtensionAmount>\n    <cbc:TaxExclusiveAmount currencyID=\"SAR\">500.00</cbc:TaxExclusiveAmount>\n    <cbc:TaxInclusiveAmount currencyID=\"SAR\">575.00</cbc:TaxInclusiveAmount>\n    <cbc:PayableAmount currencyID=\"SAR\">575.00</cbc:PayableAmount>\n  </cac:LegalMonetaryTotal>\n\n  <cac:InvoiceLine>\n    <cbc:ID>1</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">2.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">500.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">575.00</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>Chicken Biryani Family Pack</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">250.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n</Invoice>",
+      "canonical": "<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\" xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\" xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\" xmlns:ext=\"urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2\">\n  \n  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>\n  <cbc:ProfileID>reporting:1.0</cbc:ProfileID>\n  <cbc:ID>GOV-STANDARD-B2B-VAT15</cbc:ID>\n  <cbc:UUID>vector-standard-b2b-vat15-0001-0002-0003</cbc:UUID>\n  <cbc:IssueDate>2026-10-01</cbc:IssueDate>\n  <cbc:IssueTime>14:30:00</cbc:IssueTime>\n  <cbc:InvoiceTypeCode name=\"0100000\">388</cbc:InvoiceTypeCode>\n  <cbc:DocumentCurrencyCode>SAR</cbc:DocumentCurrencyCode>\n  <cbc:TaxCurrencyCode>SAR</cbc:TaxCurrencyCode>\n\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>ICV</cbc:ID>\n    <cbc:UUID>1</cbc:UUID>\n  </cac:AdditionalDocumentReference>\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>PIH</cbc:ID>\n    <cac:Attachment>\n      <cbc:EmbeddedDocumentBinaryObject mimeCode=\"text/plain\">NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==</cbc:EmbeddedDocumentBinaryObject>\n    </cac:Attachment>\n  </cac:AdditionalDocumentReference>\n  \n\n  <cac:AccountingSupplierParty>\n    <cac:Party>\n\n      <cac:PostalAddress>\n        <cbc:StreetName>King Fahd Road</cbc:StreetName>\n        <cbc:BuildingNumber>1234</cbc:BuildingNumber>\n        <cbc:PlotIdentification>5678</cbc:PlotIdentification>\n        <cbc:CitySubdivisionName>Al Olaya</cbc:CitySubdivisionName>\n        <cbc:CityName>Riyadh</cbc:CityName>\n        <cbc:PostalZone>12211</cbc:PostalZone>\n        <cac:Country>\n          <cbc:IdentificationCode>SA</cbc:IdentificationCode>\n        </cac:Country>\n      </cac:PostalAddress>\n      <cac:PartyTaxScheme>\n        <cbc:CompanyID>310122393500003</cbc:CompanyID>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:PartyTaxScheme>\n      <cac:PartyLegalEntity>\n        <cbc:RegistrationName>مطعم الوادي الهندي</cbc:RegistrationName>\n      </cac:PartyLegalEntity>\n    </cac:Party>\n  </cac:AccountingSupplierParty>\n  <cac:AccountingCustomerParty>\n    <cac:Party>\n\n      <cac:PostalAddress>\n        <cbc:StreetName>Prince Turki Road</cbc:StreetName>\n        <cbc:BuildingNumber>1111</cbc:BuildingNumber>\n        <cbc:CitySubdivisionName>Al Malqa</cbc:CitySubdivisionName>\n        <cbc:CityName>Riyadh</cbc:CityName>\n        <cbc:PostalZone>13521</cbc:PostalZone>\n        <cac:Country>\n          <cbc:IdentificationCode>SA</cbc:IdentificationCode>\n        </cac:Country>\n      </cac:PostalAddress>\n      <cac:PartyTaxScheme>\n        <cbc:CompanyID>310122393500113</cbc:CompanyID>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:PartyTaxScheme>\n      <cac:PartyLegalEntity>\n        <cbc:RegistrationName>Ac Corp Ltd</cbc:RegistrationName>\n      </cac:PartyLegalEntity>\n    </cac:Party>\n  </cac:AccountingCustomerParty>\n\n\n\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n    <cac:TaxSubtotal>\n      <cbc:TaxableAmount currencyID=\"SAR\">500.00</cbc:TaxableAmount>\n      <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n      <cac:TaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:TaxCategory>\n    </cac:TaxSubtotal>\n  </cac:TaxTotal>\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n  </cac:TaxTotal>\n\n  <cac:LegalMonetaryTotal>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">500.00</cbc:LineExtensionAmount>\n    <cbc:TaxExclusiveAmount currencyID=\"SAR\">500.00</cbc:TaxExclusiveAmount>\n    <cbc:TaxInclusiveAmount currencyID=\"SAR\">575.00</cbc:TaxInclusiveAmount>\n    <cbc:PayableAmount currencyID=\"SAR\">575.00</cbc:PayableAmount>\n  </cac:LegalMonetaryTotal>\n\n  <cac:InvoiceLine>\n    <cbc:ID>1</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">2.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">500.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">575.00</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>Chicken Biryani Family Pack</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">250.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n</Invoice>",
+      "invoice_hash_hex": "cd73274505d7132e9637c4b6ea85194a7ec7ba18767aff01a96425081575a6f9",
+      "invoice_hash_base64": "zXMnRQXXEy6WN8S26oUZSn7Huhh2ev8BqWQlCBV1pvk="
+    },
+    {
+      "id": "simplified-b2c-multiline-vat15",
+      "document_kind": "invoice",
+      "invoice_data": {
+        "invoiceNumber": "GOV-SIMPLIFIED-B2C-MULTILINE-VAT15",
+        "uuid": "vector-simplified-b2c-multiline-vat15-0001-0002-0003",
+        "issueDate": "2026-10-02",
+        "issueTime": "09:15:42",
+        "invoiceTypeCode": "388",
+        "invoiceTypeCodeName": "0200000",
+        "profileId": "reporting:1.0",
+        "currencyCode": "SAR",
+        "invoiceCounter": 1,
+        "previousInvoiceHash": "NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==",
+        "supplier": {
+          "nameAr": "مطعم الوادي الهندي",
+          "nameEn": "Indian Valley Restaurant",
+          "vatNumber": "310122393500003",
+          "address": {
+            "street": "King Fahd Road",
+            "building": "1234",
+            "additionalNumber": "5678",
+            "district": "Al Olaya",
+            "city": "Riyadh",
+            "postalCode": "12211",
+            "countryCode": "SA"
+          }
+        },
+        "lineExtensionAmount": "300.00",
+        "taxExclusiveAmount": "300.00",
+        "taxInclusiveAmount": "345.00",
+        "payableAmount": "345.00",
+        "taxAmount": "45.00",
+        "taxSubtotals": [
+          {
+            "taxableAmount": "300.00",
+            "taxAmount": "45.00",
+            "percent": 15,
+            "taxCategoryId": "S"
+          }
+        ],
+        "invoiceLines": [
+          {
+            "id": 1,
+            "quantity": "1",
+            "unitCode": "PCE",
+            "lineExtensionAmount": "100.00",
+            "taxAmount": "15.00",
+            "itemName": "Arabic Coffee",
+            "taxCategoryId": "S",
+            "taxPercent": 15,
+            "priceAmount": "100.00"
+          },
+          {
+            "id": 2,
+            "quantity": "2",
+            "unitCode": "PCE",
+            "lineExtensionAmount": "200.00",
+            "taxAmount": "30.00",
+            "itemName": "Kunafa Dessert",
+            "taxCategoryId": "S",
+            "taxPercent": 15,
+            "priceAmount": "100.00"
+          }
+        ]
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\"\n         xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\"\n         xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\"\n         xmlns:ext=\"urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2\">\n  <ext:UBLExtensions>\n    <ext:UBLExtension>\n      <ext:ExtensionContent/>\n    </ext:UBLExtension>\n  </ext:UBLExtensions>\n  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>\n  <cbc:ProfileID>reporting:1.0</cbc:ProfileID>\n  <cbc:ID>GOV-SIMPLIFIED-B2C-MULTILINE-VAT15</cbc:ID>\n  <cbc:UUID>vector-simplified-b2c-multiline-vat15-0001-0002-0003</cbc:UUID>\n  <cbc:IssueDate>2026-10-02</cbc:IssueDate>\n  <cbc:IssueTime>09:15:42</cbc:IssueTime>\n  <cbc:InvoiceTypeCode name=\"0200000\">388</cbc:InvoiceTypeCode>\n  <cbc:DocumentCurrencyCode>SAR</cbc:DocumentCurrencyCode>\n  <cbc:TaxCurrencyCode>SAR</cbc:TaxCurrencyCode>\n\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>ICV</cbc:ID>\n    <cbc:UUID>1</cbc:UUID>\n  </cac:AdditionalDocumentReference>\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>PIH</cbc:ID>\n    <cac:Attachment>\n      <cbc:EmbeddedDocumentBinaryObject mimeCode=\"text/plain\">NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==</cbc:EmbeddedDocumentBinaryObject>\n    </cac:Attachment>\n  </cac:AdditionalDocumentReference>\n  <cac:Signature>\n    <cbc:ID>urn:oasis:names:specification:ubl:signature:Invoice</cbc:ID>\n    <cbc:SignatureMethod>urn:oasis:names:specification:ubl:dsig:enveloped:xades</cbc:SignatureMethod>\n  </cac:Signature>\n\n  <cac:AccountingSupplierParty>\n    <cac:Party>\n\n      <cac:PostalAddress>\n        <cbc:StreetName>King Fahd Road</cbc:StreetName>\n        <cbc:BuildingNumber>1234</cbc:BuildingNumber>\n        <cbc:PlotIdentification>5678</cbc:PlotIdentification>\n        <cbc:CitySubdivisionName>Al Olaya</cbc:CitySubdivisionName>\n        <cbc:CityName>Riyadh</cbc:CityName>\n        <cbc:PostalZone>12211</cbc:PostalZone>\n        <cac:Country>\n          <cbc:IdentificationCode>SA</cbc:IdentificationCode>\n        </cac:Country>\n      </cac:PostalAddress>\n      <cac:PartyTaxScheme>\n        <cbc:CompanyID>310122393500003</cbc:CompanyID>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:PartyTaxScheme>\n      <cac:PartyLegalEntity>\n        <cbc:RegistrationName>مطعم الوادي الهندي</cbc:RegistrationName>\n      </cac:PartyLegalEntity>\n    </cac:Party>\n  </cac:AccountingSupplierParty>\n  <cac:AccountingCustomerParty>\n  </cac:AccountingCustomerParty>\n\n\n\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">45.00</cbc:TaxAmount>\n    <cac:TaxSubtotal>\n      <cbc:TaxableAmount currencyID=\"SAR\">300.00</cbc:TaxableAmount>\n      <cbc:TaxAmount currencyID=\"SAR\">45.00</cbc:TaxAmount>\n      <cac:TaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:TaxCategory>\n    </cac:TaxSubtotal>\n  </cac:TaxTotal>\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">45.00</cbc:TaxAmount>\n  </cac:TaxTotal>\n\n  <cac:LegalMonetaryTotal>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">300.00</cbc:LineExtensionAmount>\n    <cbc:TaxExclusiveAmount currencyID=\"SAR\">300.00</cbc:TaxExclusiveAmount>\n    <cbc:TaxInclusiveAmount currencyID=\"SAR\">345.00</cbc:TaxInclusiveAmount>\n    <cbc:PayableAmount currencyID=\"SAR\">345.00</cbc:PayableAmount>\n  </cac:LegalMonetaryTotal>\n\n  <cac:InvoiceLine>\n    <cbc:ID>1</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">1.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">100.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">15.00</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">115.00</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>Arabic Coffee</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">100.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n  <cac:InvoiceLine>\n    <cbc:ID>2</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">2.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">200.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">30.00</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">230.00</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>Kunafa Dessert</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">100.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n</Invoice>",
+      "canonical": "<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\" xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\" xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\" xmlns:ext=\"urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2\">\n  \n  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>\n  <cbc:ProfileID>reporting:1.0</cbc:ProfileID>\n  <cbc:ID>GOV-SIMPLIFIED-B2C-MULTILINE-VAT15</cbc:ID>\n  <cbc:UUID>vector-simplified-b2c-multiline-vat15-0001-0002-0003</cbc:UUID>\n  <cbc:IssueDate>2026-10-02</cbc:IssueDate>\n  <cbc:IssueTime>09:15:42</cbc:IssueTime>\n  <cbc:InvoiceTypeCode name=\"0200000\">388</cbc:InvoiceTypeCode>\n  <cbc:DocumentCurrencyCode>SAR</cbc:DocumentCurrencyCode>\n  <cbc:TaxCurrencyCode>SAR</cbc:TaxCurrencyCode>\n\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>ICV</cbc:ID>\n    <cbc:UUID>1</cbc:UUID>\n  </cac:AdditionalDocumentReference>\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>PIH</cbc:ID>\n    <cac:Attachment>\n      <cbc:EmbeddedDocumentBinaryObject mimeCode=\"text/plain\">NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==</cbc:EmbeddedDocumentBinaryObject>\n    </cac:Attachment>\n  </cac:AdditionalDocumentReference>\n  \n\n  <cac:AccountingSupplierParty>\n    <cac:Party>\n\n      <cac:PostalAddress>\n        <cbc:StreetName>King Fahd Road</cbc:StreetName>\n        <cbc:BuildingNumber>1234</cbc:BuildingNumber>\n        <cbc:PlotIdentification>5678</cbc:PlotIdentification>\n        <cbc:CitySubdivisionName>Al Olaya</cbc:CitySubdivisionName>\n        <cbc:CityName>Riyadh</cbc:CityName>\n        <cbc:PostalZone>12211</cbc:PostalZone>\n        <cac:Country>\n          <cbc:IdentificationCode>SA</cbc:IdentificationCode>\n        </cac:Country>\n      </cac:PostalAddress>\n      <cac:PartyTaxScheme>\n        <cbc:CompanyID>310122393500003</cbc:CompanyID>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:PartyTaxScheme>\n      <cac:PartyLegalEntity>\n        <cbc:RegistrationName>مطعم الوادي الهندي</cbc:RegistrationName>\n      </cac:PartyLegalEntity>\n    </cac:Party>\n  </cac:AccountingSupplierParty>\n  <cac:AccountingCustomerParty>\n  </cac:AccountingCustomerParty>\n\n\n\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">45.00</cbc:TaxAmount>\n    <cac:TaxSubtotal>\n      <cbc:TaxableAmount currencyID=\"SAR\">300.00</cbc:TaxableAmount>\n      <cbc:TaxAmount currencyID=\"SAR\">45.00</cbc:TaxAmount>\n      <cac:TaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:TaxCategory>\n    </cac:TaxSubtotal>\n  </cac:TaxTotal>\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">45.00</cbc:TaxAmount>\n  </cac:TaxTotal>\n\n  <cac:LegalMonetaryTotal>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">300.00</cbc:LineExtensionAmount>\n    <cbc:TaxExclusiveAmount currencyID=\"SAR\">300.00</cbc:TaxExclusiveAmount>\n    <cbc:TaxInclusiveAmount currencyID=\"SAR\">345.00</cbc:TaxInclusiveAmount>\n    <cbc:PayableAmount currencyID=\"SAR\">345.00</cbc:PayableAmount>\n  </cac:LegalMonetaryTotal>\n\n  <cac:InvoiceLine>\n    <cbc:ID>1</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">1.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">100.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">15.00</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">115.00</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>Arabic Coffee</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">100.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n  <cac:InvoiceLine>\n    <cbc:ID>2</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">2.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">200.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">30.00</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">230.00</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>Kunafa Dessert</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">100.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n</Invoice>",
+      "invoice_hash_hex": "cdc2dda7ce8d253304c9393f800b121bde6c72872286e9aae2f45759c120bcb3",
+      "invoice_hash_base64": "zcLdp86NJTMEyTk/gAsSG95scocihumq4vRXWcEgvLM="
+    },
+    {
+      "id": "simplified-zero-rated",
+      "document_kind": "invoice",
+      "invoice_data": {
+        "invoiceNumber": "GOV-SIMPLIFIED-ZERO-RATED",
+        "uuid": "vector-simplified-zero-rated-0001-0002-0003",
+        "issueDate": "2026-10-03",
+        "issueTime": "23:59:59",
+        "invoiceTypeCode": "388",
+        "invoiceTypeCodeName": "0200000",
+        "profileId": "reporting:1.0",
+        "currencyCode": "SAR",
+        "invoiceCounter": 1,
+        "previousInvoiceHash": "NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==",
+        "supplier": {
+          "nameAr": "مطعم الوادي الهندي",
+          "nameEn": "Indian Valley Restaurant",
+          "vatNumber": "310122393500003",
+          "address": {
+            "street": "King Fahd Road",
+            "building": "1234",
+            "additionalNumber": "5678",
+            "district": "Al Olaya",
+            "city": "Riyadh",
+            "postalCode": "12211",
+            "countryCode": "SA"
+          }
+        },
+        "lineExtensionAmount": "150.00",
+        "taxExclusiveAmount": "150.00",
+        "taxInclusiveAmount": "150.00",
+        "payableAmount": "150.00",
+        "taxAmount": "0.00",
+        "taxSubtotals": [
+          {
+            "taxableAmount": "150.00",
+            "taxAmount": "0.00",
+            "percent": 0,
+            "taxCategoryId": "Z"
+          }
+        ],
+        "invoiceLines": [
+          {
+            "id": 1,
+            "quantity": "1",
+            "unitCode": "PCE",
+            "lineExtensionAmount": "150.00",
+            "taxAmount": "0.00",
+            "itemName": "Zero-rated Export Service",
+            "taxCategoryId": "Z",
+            "taxPercent": 0,
+            "priceAmount": "150.00"
+          }
+        ]
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\"\n         xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\"\n         xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\"\n         xmlns:ext=\"urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2\">\n  <ext:UBLExtensions>\n    <ext:UBLExtension>\n      <ext:ExtensionContent/>\n    </ext:UBLExtension>\n  </ext:UBLExtensions>\n  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>\n  <cbc:ProfileID>reporting:1.0</cbc:ProfileID>\n  <cbc:ID>GOV-SIMPLIFIED-ZERO-RATED</cbc:ID>\n  <cbc:UUID>vector-simplified-zero-rated-0001-0002-0003</cbc:UUID>\n  <cbc:IssueDate>2026-10-03</cbc:IssueDate>\n  <cbc:IssueTime>23:59:59</cbc:IssueTime>\n  <cbc:InvoiceTypeCode name=\"0200000\">388</cbc:InvoiceTypeCode>\n  <cbc:DocumentCurrencyCode>SAR</cbc:DocumentCurrencyCode>\n  <cbc:TaxCurrencyCode>SAR</cbc:TaxCurrencyCode>\n\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>ICV</cbc:ID>\n    <cbc:UUID>1</cbc:UUID>\n  </cac:AdditionalDocumentReference>\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>PIH</cbc:ID>\n    <cac:Attachment>\n      <cbc:EmbeddedDocumentBinaryObject mimeCode=\"text/plain\">NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==</cbc:EmbeddedDocumentBinaryObject>\n    </cac:Attachment>\n  </cac:AdditionalDocumentReference>\n  <cac:Signature>\n    <cbc:ID>urn:oasis:names:specification:ubl:signature:Invoice</cbc:ID>\n    <cbc:SignatureMethod>urn:oasis:names:specification:ubl:dsig:enveloped:xades</cbc:SignatureMethod>\n  </cac:Signature>\n\n  <cac:AccountingSupplierParty>\n    <cac:Party>\n\n      <cac:PostalAddress>\n        <cbc:StreetName>King Fahd Road</cbc:StreetName>\n        <cbc:BuildingNumber>1234</cbc:BuildingNumber>\n        <cbc:PlotIdentification>5678</cbc:PlotIdentification>\n        <cbc:CitySubdivisionName>Al Olaya</cbc:CitySubdivisionName>\n        <cbc:CityName>Riyadh</cbc:CityName>\n        <cbc:PostalZone>12211</cbc:PostalZone>\n        <cac:Country>\n          <cbc:IdentificationCode>SA</cbc:IdentificationCode>\n        </cac:Country>\n      </cac:PostalAddress>\n      <cac:PartyTaxScheme>\n        <cbc:CompanyID>310122393500003</cbc:CompanyID>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:PartyTaxScheme>\n      <cac:PartyLegalEntity>\n        <cbc:RegistrationName>مطعم الوادي الهندي</cbc:RegistrationName>\n      </cac:PartyLegalEntity>\n    </cac:Party>\n  </cac:AccountingSupplierParty>\n  <cac:AccountingCustomerParty>\n  </cac:AccountingCustomerParty>\n\n\n\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">0.00</cbc:TaxAmount>\n    <cac:TaxSubtotal>\n      <cbc:TaxableAmount currencyID=\"SAR\">150.00</cbc:TaxableAmount>\n      <cbc:TaxAmount currencyID=\"SAR\">0.00</cbc:TaxAmount>\n      <cac:TaxCategory>\n        <cbc:ID>Z</cbc:ID>\n        <cbc:Percent>0.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:TaxCategory>\n    </cac:TaxSubtotal>\n  </cac:TaxTotal>\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">0.00</cbc:TaxAmount>\n  </cac:TaxTotal>\n\n  <cac:LegalMonetaryTotal>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">150.00</cbc:LineExtensionAmount>\n    <cbc:TaxExclusiveAmount currencyID=\"SAR\">150.00</cbc:TaxExclusiveAmount>\n    <cbc:TaxInclusiveAmount currencyID=\"SAR\">150.00</cbc:TaxInclusiveAmount>\n    <cbc:PayableAmount currencyID=\"SAR\">150.00</cbc:PayableAmount>\n  </cac:LegalMonetaryTotal>\n\n  <cac:InvoiceLine>\n    <cbc:ID>1</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">1.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">150.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">0.00</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">150.00</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>Zero-rated Export Service</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>Z</cbc:ID>\n        <cbc:Percent>0.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">150.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n</Invoice>",
+      "canonical": "<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\" xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\" xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\" xmlns:ext=\"urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2\">\n  \n  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>\n  <cbc:ProfileID>reporting:1.0</cbc:ProfileID>\n  <cbc:ID>GOV-SIMPLIFIED-ZERO-RATED</cbc:ID>\n  <cbc:UUID>vector-simplified-zero-rated-0001-0002-0003</cbc:UUID>\n  <cbc:IssueDate>2026-10-03</cbc:IssueDate>\n  <cbc:IssueTime>23:59:59</cbc:IssueTime>\n  <cbc:InvoiceTypeCode name=\"0200000\">388</cbc:InvoiceTypeCode>\n  <cbc:DocumentCurrencyCode>SAR</cbc:DocumentCurrencyCode>\n  <cbc:TaxCurrencyCode>SAR</cbc:TaxCurrencyCode>\n\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>ICV</cbc:ID>\n    <cbc:UUID>1</cbc:UUID>\n  </cac:AdditionalDocumentReference>\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>PIH</cbc:ID>\n    <cac:Attachment>\n      <cbc:EmbeddedDocumentBinaryObject mimeCode=\"text/plain\">NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==</cbc:EmbeddedDocumentBinaryObject>\n    </cac:Attachment>\n  </cac:AdditionalDocumentReference>\n  \n\n  <cac:AccountingSupplierParty>\n    <cac:Party>\n\n      <cac:PostalAddress>\n        <cbc:StreetName>King Fahd Road</cbc:StreetName>\n        <cbc:BuildingNumber>1234</cbc:BuildingNumber>\n        <cbc:PlotIdentification>5678</cbc:PlotIdentification>\n        <cbc:CitySubdivisionName>Al Olaya</cbc:CitySubdivisionName>\n        <cbc:CityName>Riyadh</cbc:CityName>\n        <cbc:PostalZone>12211</cbc:PostalZone>\n        <cac:Country>\n          <cbc:IdentificationCode>SA</cbc:IdentificationCode>\n        </cac:Country>\n      </cac:PostalAddress>\n      <cac:PartyTaxScheme>\n        <cbc:CompanyID>310122393500003</cbc:CompanyID>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:PartyTaxScheme>\n      <cac:PartyLegalEntity>\n        <cbc:RegistrationName>مطعم الوادي الهندي</cbc:RegistrationName>\n      </cac:PartyLegalEntity>\n    </cac:Party>\n  </cac:AccountingSupplierParty>\n  <cac:AccountingCustomerParty>\n  </cac:AccountingCustomerParty>\n\n\n\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">0.00</cbc:TaxAmount>\n    <cac:TaxSubtotal>\n      <cbc:TaxableAmount currencyID=\"SAR\">150.00</cbc:TaxableAmount>\n      <cbc:TaxAmount currencyID=\"SAR\">0.00</cbc:TaxAmount>\n      <cac:TaxCategory>\n        <cbc:ID>Z</cbc:ID>\n        <cbc:Percent>0.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:TaxCategory>\n    </cac:TaxSubtotal>\n  </cac:TaxTotal>\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">0.00</cbc:TaxAmount>\n  </cac:TaxTotal>\n\n  <cac:LegalMonetaryTotal>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">150.00</cbc:LineExtensionAmount>\n    <cbc:TaxExclusiveAmount currencyID=\"SAR\">150.00</cbc:TaxExclusiveAmount>\n    <cbc:TaxInclusiveAmount currencyID=\"SAR\">150.00</cbc:TaxInclusiveAmount>\n    <cbc:PayableAmount currencyID=\"SAR\">150.00</cbc:PayableAmount>\n  </cac:LegalMonetaryTotal>\n\n  <cac:InvoiceLine>\n    <cbc:ID>1</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">1.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">150.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">0.00</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">150.00</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>Zero-rated Export Service</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>Z</cbc:ID>\n        <cbc:Percent>0.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">150.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n</Invoice>",
+      "invoice_hash_hex": "202645264e24d99c07feeec27625f62a4bee2589582265f5c63e2151309f397b",
+      "invoice_hash_base64": "ICZFJk4k2ZwH/u7CdiX2KkvuJYlYImX1xj4hUTCfOXs="
+    },
+    {
+      "id": "simplified-arabic-lines",
+      "document_kind": "invoice",
+      "invoice_data": {
+        "invoiceNumber": "GOV-SIMPLIFIED-ARABIC-LINES",
+        "uuid": "vector-simplified-arabic-lines-0001-0002-0003",
+        "issueDate": "2026-10-04",
+        "issueTime": "18:00:05",
+        "invoiceTypeCode": "388",
+        "invoiceTypeCodeName": "0200000",
+        "profileId": "reporting:1.0",
+        "currencyCode": "SAR",
+        "invoiceCounter": 1,
+        "previousInvoiceHash": "NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==",
+        "supplier": {
+          "nameAr": "مطعم الوادي الهندي",
+          "nameEn": "Indian Valley Restaurant",
+          "vatNumber": "310122393500003",
+          "address": {
+            "street": "King Fahd Road",
+            "building": "1234",
+            "additionalNumber": "5678",
+            "district": "Al Olaya",
+            "city": "Riyadh",
+            "postalCode": "12211",
+            "countryCode": "SA"
+          }
+        },
+        "lineExtensionAmount": "70.00",
+        "taxExclusiveAmount": "70.00",
+        "taxInclusiveAmount": "80.50",
+        "payableAmount": "80.50",
+        "taxAmount": "10.50",
+        "taxSubtotals": [
+          {
+            "taxableAmount": "70.00",
+            "taxAmount": "10.50",
+            "percent": 15,
+            "taxCategoryId": "S"
+          }
+        ],
+        "invoiceLines": [
+          {
+            "id": 1,
+            "quantity": "3",
+            "unitCode": "PCE",
+            "lineExtensionAmount": "30.00",
+            "taxAmount": "4.50",
+            "itemName": "شاورما عربية",
+            "taxCategoryId": "S",
+            "taxPercent": 15,
+            "priceAmount": "10.00"
+          },
+          {
+            "id": 2,
+            "quantity": "1",
+            "unitCode": "PCE",
+            "lineExtensionAmount": "40.00",
+            "taxAmount": "6.00",
+            "itemName": "عصير مانجو",
+            "taxCategoryId": "S",
+            "taxPercent": 15,
+            "priceAmount": "40.00"
+          }
+        ]
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\"\n         xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\"\n         xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\"\n         xmlns:ext=\"urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2\">\n  <ext:UBLExtensions>\n    <ext:UBLExtension>\n      <ext:ExtensionContent/>\n    </ext:UBLExtension>\n  </ext:UBLExtensions>\n  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>\n  <cbc:ProfileID>reporting:1.0</cbc:ProfileID>\n  <cbc:ID>GOV-SIMPLIFIED-ARABIC-LINES</cbc:ID>\n  <cbc:UUID>vector-simplified-arabic-lines-0001-0002-0003</cbc:UUID>\n  <cbc:IssueDate>2026-10-04</cbc:IssueDate>\n  <cbc:IssueTime>18:00:05</cbc:IssueTime>\n  <cbc:InvoiceTypeCode name=\"0200000\">388</cbc:InvoiceTypeCode>\n  <cbc:DocumentCurrencyCode>SAR</cbc:DocumentCurrencyCode>\n  <cbc:TaxCurrencyCode>SAR</cbc:TaxCurrencyCode>\n\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>ICV</cbc:ID>\n    <cbc:UUID>1</cbc:UUID>\n  </cac:AdditionalDocumentReference>\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>PIH</cbc:ID>\n    <cac:Attachment>\n      <cbc:EmbeddedDocumentBinaryObject mimeCode=\"text/plain\">NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==</cbc:EmbeddedDocumentBinaryObject>\n    </cac:Attachment>\n  </cac:AdditionalDocumentReference>\n  <cac:Signature>\n    <cbc:ID>urn:oasis:names:specification:ubl:signature:Invoice</cbc:ID>\n    <cbc:SignatureMethod>urn:oasis:names:specification:ubl:dsig:enveloped:xades</cbc:SignatureMethod>\n  </cac:Signature>\n\n  <cac:AccountingSupplierParty>\n    <cac:Party>\n\n      <cac:PostalAddress>\n        <cbc:StreetName>King Fahd Road</cbc:StreetName>\n        <cbc:BuildingNumber>1234</cbc:BuildingNumber>\n        <cbc:PlotIdentification>5678</cbc:PlotIdentification>\n        <cbc:CitySubdivisionName>Al Olaya</cbc:CitySubdivisionName>\n        <cbc:CityName>Riyadh</cbc:CityName>\n        <cbc:PostalZone>12211</cbc:PostalZone>\n        <cac:Country>\n          <cbc:IdentificationCode>SA</cbc:IdentificationCode>\n        </cac:Country>\n      </cac:PostalAddress>\n      <cac:PartyTaxScheme>\n        <cbc:CompanyID>310122393500003</cbc:CompanyID>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:PartyTaxScheme>\n      <cac:PartyLegalEntity>\n        <cbc:RegistrationName>مطعم الوادي الهندي</cbc:RegistrationName>\n      </cac:PartyLegalEntity>\n    </cac:Party>\n  </cac:AccountingSupplierParty>\n  <cac:AccountingCustomerParty>\n  </cac:AccountingCustomerParty>\n\n\n\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">10.50</cbc:TaxAmount>\n    <cac:TaxSubtotal>\n      <cbc:TaxableAmount currencyID=\"SAR\">70.00</cbc:TaxableAmount>\n      <cbc:TaxAmount currencyID=\"SAR\">10.50</cbc:TaxAmount>\n      <cac:TaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:TaxCategory>\n    </cac:TaxSubtotal>\n  </cac:TaxTotal>\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">10.50</cbc:TaxAmount>\n  </cac:TaxTotal>\n\n  <cac:LegalMonetaryTotal>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">70.00</cbc:LineExtensionAmount>\n    <cbc:TaxExclusiveAmount currencyID=\"SAR\">70.00</cbc:TaxExclusiveAmount>\n    <cbc:TaxInclusiveAmount currencyID=\"SAR\">80.50</cbc:TaxInclusiveAmount>\n    <cbc:PayableAmount currencyID=\"SAR\">80.50</cbc:PayableAmount>\n  </cac:LegalMonetaryTotal>\n\n  <cac:InvoiceLine>\n    <cbc:ID>1</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">3.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">30.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">4.50</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">34.50</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>شاورما عربية</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">10.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n  <cac:InvoiceLine>\n    <cbc:ID>2</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">1.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">40.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">6.00</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">46.00</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>عصير مانجو</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">40.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n</Invoice>",
+      "canonical": "<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\" xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\" xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\" xmlns:ext=\"urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2\">\n  \n  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>\n  <cbc:ProfileID>reporting:1.0</cbc:ProfileID>\n  <cbc:ID>GOV-SIMPLIFIED-ARABIC-LINES</cbc:ID>\n  <cbc:UUID>vector-simplified-arabic-lines-0001-0002-0003</cbc:UUID>\n  <cbc:IssueDate>2026-10-04</cbc:IssueDate>\n  <cbc:IssueTime>18:00:05</cbc:IssueTime>\n  <cbc:InvoiceTypeCode name=\"0200000\">388</cbc:InvoiceTypeCode>\n  <cbc:DocumentCurrencyCode>SAR</cbc:DocumentCurrencyCode>\n  <cbc:TaxCurrencyCode>SAR</cbc:TaxCurrencyCode>\n\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>ICV</cbc:ID>\n    <cbc:UUID>1</cbc:UUID>\n  </cac:AdditionalDocumentReference>\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>PIH</cbc:ID>\n    <cac:Attachment>\n      <cbc:EmbeddedDocumentBinaryObject mimeCode=\"text/plain\">NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==</cbc:EmbeddedDocumentBinaryObject>\n    </cac:Attachment>\n  </cac:AdditionalDocumentReference>\n  \n\n  <cac:AccountingSupplierParty>\n    <cac:Party>\n\n      <cac:PostalAddress>\n        <cbc:StreetName>King Fahd Road</cbc:StreetName>\n        <cbc:BuildingNumber>1234</cbc:BuildingNumber>\n        <cbc:PlotIdentification>5678</cbc:PlotIdentification>\n        <cbc:CitySubdivisionName>Al Olaya</cbc:CitySubdivisionName>\n        <cbc:CityName>Riyadh</cbc:CityName>\n        <cbc:PostalZone>12211</cbc:PostalZone>\n        <cac:Country>\n          <cbc:IdentificationCode>SA</cbc:IdentificationCode>\n        </cac:Country>\n      </cac:PostalAddress>\n      <cac:PartyTaxScheme>\n        <cbc:CompanyID>310122393500003</cbc:CompanyID>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:PartyTaxScheme>\n      <cac:PartyLegalEntity>\n        <cbc:RegistrationName>مطعم الوادي الهندي</cbc:RegistrationName>\n      </cac:PartyLegalEntity>\n    </cac:Party>\n  </cac:AccountingSupplierParty>\n  <cac:AccountingCustomerParty>\n  </cac:AccountingCustomerParty>\n\n\n\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">10.50</cbc:TaxAmount>\n    <cac:TaxSubtotal>\n      <cbc:TaxableAmount currencyID=\"SAR\">70.00</cbc:TaxableAmount>\n      <cbc:TaxAmount currencyID=\"SAR\">10.50</cbc:TaxAmount>\n      <cac:TaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:TaxCategory>\n    </cac:TaxSubtotal>\n  </cac:TaxTotal>\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">10.50</cbc:TaxAmount>\n  </cac:TaxTotal>\n\n  <cac:LegalMonetaryTotal>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">70.00</cbc:LineExtensionAmount>\n    <cbc:TaxExclusiveAmount currencyID=\"SAR\">70.00</cbc:TaxExclusiveAmount>\n    <cbc:TaxInclusiveAmount currencyID=\"SAR\">80.50</cbc:TaxInclusiveAmount>\n    <cbc:PayableAmount currencyID=\"SAR\">80.50</cbc:PayableAmount>\n  </cac:LegalMonetaryTotal>\n\n  <cac:InvoiceLine>\n    <cbc:ID>1</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">3.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">30.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">4.50</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">34.50</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>شاورما عربية</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">10.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n  <cac:InvoiceLine>\n    <cbc:ID>2</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">1.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">40.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">6.00</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">46.00</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>عصير مانجو</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">40.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n</Invoice>",
+      "invoice_hash_hex": "d7d33645ab0911eff95468cdeaa411ad84a34f1d747438b09f1dec67b9c6a570",
+      "invoice_hash_base64": "19M2RasJEe/5VGjN6qQRrYSjTx10dDiwnx3sZ7nGpXA="
+    },
+    {
+      "id": "credit-note-simplified-vat15",
+      "document_kind": "credit_note",
+      "invoice_data": {
+        "invoiceNumber": "GOV-CREDIT-NOTE-SIMPLIFIED-VAT15",
+        "uuid": "vector-credit-note-simplified-vat15-0001-0002-0003",
+        "issueDate": "2026-10-05",
+        "issueTime": "12:00:00",
+        "invoiceTypeCode": "381",
+        "invoiceTypeCodeName": "0200000",
+        "profileId": "reporting:1.0",
+        "currencyCode": "SAR",
+        "invoiceCounter": 1,
+        "previousInvoiceHash": "NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==",
+        "supplier": {
+          "nameAr": "مطعم الوادي الهندي",
+          "nameEn": "Indian Valley Restaurant",
+          "vatNumber": "310122393500003",
+          "address": {
+            "street": "King Fahd Road",
+            "building": "1234",
+            "additionalNumber": "5678",
+            "district": "Al Olaya",
+            "city": "Riyadh",
+            "postalCode": "12211",
+            "countryCode": "SA"
+          }
+        },
+        "lineExtensionAmount": "500.00",
+        "taxExclusiveAmount": "500.00",
+        "taxInclusiveAmount": "575.00",
+        "payableAmount": "575.00",
+        "taxAmount": "75.00",
+        "taxSubtotals": [
+          {
+            "taxableAmount": "500.00",
+            "taxAmount": "75.00",
+            "percent": 15,
+            "taxCategoryId": "S"
+          }
+        ],
+        "invoiceLines": [
+          {
+            "id": 1,
+            "quantity": "2",
+            "unitCode": "PCE",
+            "lineExtensionAmount": "500.00",
+            "taxAmount": "75.00",
+            "itemName": "Chicken Biryani Family Pack",
+            "taxCategoryId": "S",
+            "taxPercent": 15,
+            "priceAmount": "250.00"
+          }
+        ],
+        "originalInvoiceNumber": "GOV-STANDARD-B2B-VAT15",
+        "originalInvoiceUuid": "vector-standard-b2b-vat15-0001-0002-0003",
+        "originalInvoiceDate": "2026-10-01",
+        "reason": "Order returned by customer"
+      },
+      "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\"\n            xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\"\n            xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\"\n            xmlns:ext=\"urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2\">\n  <ext:UBLExtensions>\n    <ext:UBLExtension>\n      <ext:ExtensionContent/>\n    </ext:UBLExtension>\n  </ext:UBLExtensions>\n  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>\n  <cbc:ProfileID>reporting:1.0</cbc:ProfileID>\n  <cbc:ID>GOV-CREDIT-NOTE-SIMPLIFIED-VAT15</cbc:ID>\n  <cbc:UUID>vector-credit-note-simplified-vat15-0001-0002-0003</cbc:UUID>\n  <cbc:IssueDate>2026-10-05</cbc:IssueDate>\n  <cbc:IssueTime>12:00:00</cbc:IssueTime>\n  <cbc:InvoiceTypeCode name=\"0200000\">381</cbc:InvoiceTypeCode>\n  <cbc:Note>Order returned by customer</cbc:Note>\n  <cbc:DocumentCurrencyCode>SAR</cbc:DocumentCurrencyCode>\n  <cbc:TaxCurrencyCode>SAR</cbc:TaxCurrencyCode>\n\n  <cac:BillingReference>\n    <cac:InvoiceDocumentReference>\n      <cbc:ID>GOV-STANDARD-B2B-VAT15</cbc:ID>\n      <cbc:UUID>vector-standard-b2b-vat15-0001-0002-0003</cbc:UUID>\n      <cbc:IssueDate>2026-10-01</cbc:IssueDate>\n    </cac:InvoiceDocumentReference>\n  </cac:BillingReference>\n\n\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>ICV</cbc:ID>\n    <cbc:UUID>1</cbc:UUID>\n  </cac:AdditionalDocumentReference>\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>PIH</cbc:ID>\n    <cac:Attachment>\n      <cbc:EmbeddedDocumentBinaryObject mimeCode=\"text/plain\">NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==</cbc:EmbeddedDocumentBinaryObject>\n    </cac:Attachment>\n  </cac:AdditionalDocumentReference>\n  <cac:Signature>\n    <cbc:ID>urn:oasis:names:specification:ubl:signature:Invoice</cbc:ID>\n    <cbc:SignatureMethod>urn:oasis:names:specification:ubl:dsig:enveloped:xades</cbc:SignatureMethod>\n  </cac:Signature>\n\n  <cac:AccountingSupplierParty>\n    <cac:Party>\n\n      <cac:PostalAddress>\n        <cbc:StreetName>King Fahd Road</cbc:StreetName>\n        <cbc:BuildingNumber>1234</cbc:BuildingNumber>\n        <cbc:PlotIdentification>5678</cbc:PlotIdentification>\n        <cbc:CitySubdivisionName>Al Olaya</cbc:CitySubdivisionName>\n        <cbc:CityName>Riyadh</cbc:CityName>\n        <cbc:PostalZone>12211</cbc:PostalZone>\n        <cac:Country>\n          <cbc:IdentificationCode>SA</cbc:IdentificationCode>\n        </cac:Country>\n      </cac:PostalAddress>\n      <cac:PartyTaxScheme>\n        <cbc:CompanyID>310122393500003</cbc:CompanyID>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:PartyTaxScheme>\n      <cac:PartyLegalEntity>\n        <cbc:RegistrationName>مطعم الوادي الهندي</cbc:RegistrationName>\n      </cac:PartyLegalEntity>\n    </cac:Party>\n  </cac:AccountingSupplierParty>\n  <cac:AccountingCustomerParty>\n  </cac:AccountingCustomerParty>\n\n  <cac:PaymentMeans>\n    <cbc:PaymentMeansCode>10</cbc:PaymentMeansCode>\n    <cbc:InstructionNote>Order returned by customer</cbc:InstructionNote>\n  </cac:PaymentMeans>\n\n\n\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n    <cac:TaxSubtotal>\n      <cbc:TaxableAmount currencyID=\"SAR\">500.00</cbc:TaxableAmount>\n      <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n      <cac:TaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:TaxCategory>\n    </cac:TaxSubtotal>\n  </cac:TaxTotal>\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n  </cac:TaxTotal>\n\n  <cac:LegalMonetaryTotal>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">500.00</cbc:LineExtensionAmount>\n    <cbc:TaxExclusiveAmount currencyID=\"SAR\">500.00</cbc:TaxExclusiveAmount>\n    <cbc:TaxInclusiveAmount currencyID=\"SAR\">575.00</cbc:TaxInclusiveAmount>\n    <cbc:PayableAmount currencyID=\"SAR\">575.00</cbc:PayableAmount>\n  </cac:LegalMonetaryTotal>\n\n  <cac:InvoiceLine>\n    <cbc:ID>1</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">2.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">500.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">575.00</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>Chicken Biryani Family Pack</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">250.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n</Invoice>",
+      "canonical": "<Invoice xmlns=\"urn:oasis:names:specification:ubl:schema:xsd:Invoice-2\" xmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\" xmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\" xmlns:ext=\"urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2\">\n  \n  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>\n  <cbc:ProfileID>reporting:1.0</cbc:ProfileID>\n  <cbc:ID>GOV-CREDIT-NOTE-SIMPLIFIED-VAT15</cbc:ID>\n  <cbc:UUID>vector-credit-note-simplified-vat15-0001-0002-0003</cbc:UUID>\n  <cbc:IssueDate>2026-10-05</cbc:IssueDate>\n  <cbc:IssueTime>12:00:00</cbc:IssueTime>\n  <cbc:InvoiceTypeCode name=\"0200000\">381</cbc:InvoiceTypeCode>\n  <cbc:Note>Order returned by customer</cbc:Note>\n  <cbc:DocumentCurrencyCode>SAR</cbc:DocumentCurrencyCode>\n  <cbc:TaxCurrencyCode>SAR</cbc:TaxCurrencyCode>\n\n  <cac:BillingReference>\n    <cac:InvoiceDocumentReference>\n      <cbc:ID>GOV-STANDARD-B2B-VAT15</cbc:ID>\n      <cbc:UUID>vector-standard-b2b-vat15-0001-0002-0003</cbc:UUID>\n      <cbc:IssueDate>2026-10-01</cbc:IssueDate>\n    </cac:InvoiceDocumentReference>\n  </cac:BillingReference>\n\n\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>ICV</cbc:ID>\n    <cbc:UUID>1</cbc:UUID>\n  </cac:AdditionalDocumentReference>\n  <cac:AdditionalDocumentReference>\n    <cbc:ID>PIH</cbc:ID>\n    <cac:Attachment>\n      <cbc:EmbeddedDocumentBinaryObject mimeCode=\"text/plain\">NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==</cbc:EmbeddedDocumentBinaryObject>\n    </cac:Attachment>\n  </cac:AdditionalDocumentReference>\n  \n\n  <cac:AccountingSupplierParty>\n    <cac:Party>\n\n      <cac:PostalAddress>\n        <cbc:StreetName>King Fahd Road</cbc:StreetName>\n        <cbc:BuildingNumber>1234</cbc:BuildingNumber>\n        <cbc:PlotIdentification>5678</cbc:PlotIdentification>\n        <cbc:CitySubdivisionName>Al Olaya</cbc:CitySubdivisionName>\n        <cbc:CityName>Riyadh</cbc:CityName>\n        <cbc:PostalZone>12211</cbc:PostalZone>\n        <cac:Country>\n          <cbc:IdentificationCode>SA</cbc:IdentificationCode>\n        </cac:Country>\n      </cac:PostalAddress>\n      <cac:PartyTaxScheme>\n        <cbc:CompanyID>310122393500003</cbc:CompanyID>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:PartyTaxScheme>\n      <cac:PartyLegalEntity>\n        <cbc:RegistrationName>مطعم الوادي الهندي</cbc:RegistrationName>\n      </cac:PartyLegalEntity>\n    </cac:Party>\n  </cac:AccountingSupplierParty>\n  <cac:AccountingCustomerParty>\n  </cac:AccountingCustomerParty>\n\n  <cac:PaymentMeans>\n    <cbc:PaymentMeansCode>10</cbc:PaymentMeansCode>\n    <cbc:InstructionNote>Order returned by customer</cbc:InstructionNote>\n  </cac:PaymentMeans>\n\n\n\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n    <cac:TaxSubtotal>\n      <cbc:TaxableAmount currencyID=\"SAR\">500.00</cbc:TaxableAmount>\n      <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n      <cac:TaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:TaxCategory>\n    </cac:TaxSubtotal>\n  </cac:TaxTotal>\n  <cac:TaxTotal>\n    <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n  </cac:TaxTotal>\n\n  <cac:LegalMonetaryTotal>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">500.00</cbc:LineExtensionAmount>\n    <cbc:TaxExclusiveAmount currencyID=\"SAR\">500.00</cbc:TaxExclusiveAmount>\n    <cbc:TaxInclusiveAmount currencyID=\"SAR\">575.00</cbc:TaxInclusiveAmount>\n    <cbc:PayableAmount currencyID=\"SAR\">575.00</cbc:PayableAmount>\n  </cac:LegalMonetaryTotal>\n\n  <cac:InvoiceLine>\n    <cbc:ID>1</cbc:ID>\n    <cbc:InvoicedQuantity unitCode=\"PCE\">2.00</cbc:InvoicedQuantity>\n    <cbc:LineExtensionAmount currencyID=\"SAR\">500.00</cbc:LineExtensionAmount>\n    <cac:TaxTotal>\n      <cbc:TaxAmount currencyID=\"SAR\">75.00</cbc:TaxAmount>\n      <cbc:RoundingAmount currencyID=\"SAR\">575.00</cbc:RoundingAmount>\n    </cac:TaxTotal>\n    <cac:Item>\n      <cbc:Name>Chicken Biryani Family Pack</cbc:Name>\n      <cac:ClassifiedTaxCategory>\n        <cbc:ID>S</cbc:ID>\n        <cbc:Percent>15.00</cbc:Percent>\n        <cac:TaxScheme>\n          <cbc:ID>VAT</cbc:ID>\n        </cac:TaxScheme>\n      </cac:ClassifiedTaxCategory>\n    </cac:Item>\n    <cac:Price>\n      <cbc:PriceAmount currencyID=\"SAR\">250.00</cbc:PriceAmount>\n    </cac:Price>\n  </cac:InvoiceLine>\n</Invoice>",
+      "invoice_hash_hex": "b09a0f5797c03bffa4651eaafa91a26e0e065d414a1bd055db186325ee3e27e2",
+      "invoice_hash_base64": "sJoPV5fAO/+kZR6q+pGibg4GXUFKG9BV2xhjJe4+J+I="
+    }
+  ]
+}
